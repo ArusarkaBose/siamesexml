@@ -2,6 +2,7 @@ import sys
 import re
 import torch.nn as nn
 import models.residual_layer as residual_layer
+import models.attention_layer as attention_layer
 import models.astec as astec
 import json
 from collections import OrderedDict
@@ -26,6 +27,7 @@ elements = {
     'linear': nn.Linear,
     'relu': nn.ReLU,
     'gelu': nn.GELU,
+    'attention': attention_layer.AttnDecoderRNN,
     'residual': residual_layer.Residual,
     '_residual': residual_layer.Residual,
     'identity': nn.Identity,
